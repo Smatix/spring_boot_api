@@ -1,0 +1,9 @@
+It is a simple api in spring boot
+
+Getting start
+
+1) git clone https://github.com/Smatix/spring_boot_api.git
+
+2) Run application from class SpringBootApiApplication
+
+3) Get to url localhost:8000/hello (e.g via <a href="https://www.getpostman.com/">Postman</a>), you should see "Hello World" message
