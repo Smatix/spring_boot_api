@@ -6,4 +6,4 @@ Getting start
 
 2) Run application from class SpringBootApiApplication
 
-3) Get to url localhost:8000/hello (e.g via <a href="https://www.getpostman.com/">Postman</a>), you should see "Hello World" message
+3) Get to url localhost:8000/hello (e.g via Postman), you should see "Hello World" message
