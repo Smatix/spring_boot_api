@@ -4,6 +4,16 @@ Getting start
 
 1) git clone https://github.com/Smatix/spring_boot_api.git
 
-2) Run application from class SpringBootApiApplication
+2) Install mysql
 
-3) Get to url localhost:8000/hello (e.g via Postman), you should see "Hello World" message
+3) Create table called api_db
+
+4) Make sure that you use Java 1.8
+
+5) Package using maven
+
+6) Run application from class SpringBootApiApplication
+
+7) To check if api work, get to url localhost:8000/hello (e.g via Postman), you should see "Hello World" message
+
+
