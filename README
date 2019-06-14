@@ -1,19 +1,177 @@
-It is a simple api in spring boot
-
-Getting start
+Instrukcja instalacji i użytkowania
 
 1) git clone https://github.com/Smatix/spring_boot_api.git
 
-2) Install mysql
+2) Zainstalować mysql
 
-3) Create table called api_db
+3) Stworzyć tabelkę api_db koniecznie z kodowaniem UTF-8 !
 
-4) Make sure that you use Java 1.8
+4) Używanie Java 1.8
 
-5) Package using maven
+5) Zainstalowanie wszystkich zależności przez Maven i uruchomienie
 
-6) Run application from class SpringBootApiApplication
+6) Aby sprawdzić czy api działa trzeba w przegladarce wpisać adres localhost:8000/hello
 
-7) To check if api work, get to url localhost:8000/hello (e.g via Postman), you should see "Hello World" message
+Do dalszej pracy z api polecam program Postman
 
+Dokumentacja
 
+Dostęp do użytkowników
+
+Stworzenie użytkownika
+
+localhost:8000/register
+Metoda HTTP: POST
+
+JSON z danymi
+{
+	"login": "twojLogin",
+	"password": "1234"
+}
+
+Pobranie użytkownika
+
+localhost:8000/login
+Metoda HTTP: POST
+
+JSON z danymi
+{
+	"login": "twojLogin",
+	"password": "1234"
+}
+
+-----PRODUKTY-----
+
+Dostęp do listy wszystkich produktów:
+
+localhost:8000/foods
+Metoda HTTP: GET
+
+Pobranie produktu po ID:
+
+localhost:8000/foods/{id}
+Metoda HTTP: GET
+
+Pobranie produktu po nazwie:
+
+localhost:8000/foods/one/{nazwa}
+Metoda HTTP: GET
+
+Dodanie nowego produktu:
+
+localhost:8000/foods
+Metoda HTTP: POST
+
+JSON z danymi
+{
+	"name": "Produkt1",
+	"calories": 45,
+	"proteins": 13,
+	"carbs": 20,
+	"fats": 3,
+	"weight": 20.5
+}
+
+Edycja produktu po ID:
+
+localhost:8000/foods/{id}
+Metoda HTTP: PUT
+
+JSON z danymi
+{
+	"name": "Produkt1",
+	"calories": 45,
+	"proteins": 13,
+	"carbs": 20,
+	"fats": 3,
+	"weight": 20.5
+}
+
+Usunięcie produktu:
+
+localhost:8000/foods/{id}
+Metoda HTTP: DELETE
+
+-----POSIŁKI-----
+
+Dostęp do listy wszystkich posiłków:
+
+localhost:8000/meals
+Metoda HTTP: GET
+
+Dostęp do posiłku po ID:
+
+localhost:8000/meals/{id}
+Metoda HTTP: GET
+
+Dostęp do posiłków po ID użytkownika:
+
+localhost:8000/meals/user/{userId}
+Metoda HTTP: GET
+
+Dodanie posiłku:
+
+localhost:8000/meals
+Metoda HTTP: POST
+
+JSON z danymi (foodList - lista id produktów do posiłku, owner login użytkownika)
+{
+	"name": "Posiłek",
+	"portions": 2,
+	"owner": "login",
+	"foodList": [1,2]
+}
+
+Edycja posiłku:
+
+localhost:8000/meals/{id}
+Metoda HTTP: PUT
+
+JSON z danymi (foodList - lista id produktów do posiłku, owner login użytkownika)
+{
+	"name": "Posiłek",
+	"portions": 2,
+	"owner": "login",
+	"foodList": [1,2]
+}
+
+Usuniecie posiłku:
+
+localhost:8000/meals/{id}
+Metoda HTTP: DELETE
+
+----PLANNER-----
+
+Pobranie posiłków z danego dnia po dacie (UWAGA ! Data jest stringiem format dd-mm-rrrr):
+
+localhost:8000/planner/{dd-mm-rrrr}
+Metoda HTTP: GET
+
+Dodanie elementu do planera
+
+localhost:8000/planner
+Metoda HTTP: POST
+
+JSON z danymi (meal - id posiłku do dodania)
+{
+	"title": "Obiad",
+	"date": "14-06-2019",
+	"meal": 1
+}
+
+Edycja elementu do planera
+
+localhost:8000/planner/{id}
+Metoda HTTP: PUT
+
+JSON z danymi (meal - id posiłku do dodania)
+{
+	"title": "Obiad",
+	"date": "14-06-2019",
+	"meal": 1
+}
+
+Ususnięcie elementu planera
+
+localhost:8000/planner/{id}
+Metoda HTTP: DELETE
