@@ -10,4 +10,11 @@ public class DefaultController {
     public String getHello() {
         return "Hello World";
     }
+
+
+
+    @GetMapping("/dwaplusdwa")
+    public Integer getHello2() {
+        return 2+2;
+    }
 }
