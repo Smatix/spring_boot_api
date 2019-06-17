@@ -22,9 +22,9 @@ public class PlannerController {
         this.mealRepository = mealRepository;
     }
 
-    @GetMapping("/planner/{date}")
-    public List<PlannerItem> getAllByDate(@PathVariable String date){
-        return this.plannerRepository.getAllByDate(date);
+    @GetMapping("/planner/user/{login}/date/{date}")
+    public List<PlannerItem> getAllByDate(@PathVariable String login, @PathVariable String date){
+        return this.plannerRepository.getAllByDateAndMeal_User_Login(date, login);
     }
 
     @PostMapping("/planner")

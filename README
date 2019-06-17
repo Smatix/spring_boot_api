@@ -142,9 +142,9 @@ Metoda HTTP: DELETE
 
 ----PLANNER-----
 
-Pobranie posiłków z danego dnia po dacie (UWAGA ! Data jest stringiem format dd-mm-rrrr):
+Pobranie posiłków z danego dnia po dacie i loginie użytkownika (UWAGA ! Data jest stringiem format dd-mm-rrrr):
 
-localhost:8000/planner/{dd-mm-rrrr}
+localhost:8000/planner/user/{login}/date/{dd-mm-rrrr}
 Metoda HTTP: GET
 
 Dodanie elementu do planera
