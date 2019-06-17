@@ -1,6 +1,7 @@
 package project.spring_boot_api.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import project.spring_boot_api.Model.Food;
 import project.spring_boot_api.Repository.FoodRepository;
@@ -35,10 +36,10 @@ public class FoodController {
     }
 
     @DeleteMapping("/foods/{id}")
-    public String delete(@PathVariable Integer id) {
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Integer id) {
         Food food = foodRespository.findById(id).get();
         foodRespository.delete(food);
-        return "Deleted";
     }
 
     @GetMapping("/foods/{id}")

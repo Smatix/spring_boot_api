@@ -1,6 +1,7 @@
 package project.spring_boot_api.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import project.spring_boot_api.DTO.PlannerDTO;
 import project.spring_boot_api.Model.Meal;
@@ -49,9 +50,9 @@ public class PlannerController {
     }
 
     @DeleteMapping("/planner/{id}")
-    public String delete(@PathVariable Integer id){
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Integer id){
         PlannerItem item = this.plannerRepository.findById(id).get();
         this.plannerRepository.delete(item);
-        return "Deleted";
     }
 }

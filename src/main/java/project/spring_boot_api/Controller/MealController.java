@@ -1,6 +1,7 @@
 package project.spring_boot_api.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import project.spring_boot_api.Builder.MealBuilderInterface;
 import project.spring_boot_api.Builder.MealDirector;
@@ -65,9 +66,9 @@ public class MealController {
     }
 
     @DeleteMapping("/meals/{id}")
-    public String delete(@PathVariable Integer id){
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Integer id){
         Meal meal = mealRepository.findById(id).get();
         this.mealRepository.delete(meal);
-        return "Deleted";
     }
 }

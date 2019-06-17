@@ -92,6 +92,8 @@ Usunięcie produktu:
 localhost:8000/foods/{id}
 Metoda HTTP: DELETE
 
+Zwraca null jeśli operacja się powiodła
+
 -----POSIŁKI-----
 
 Dostęp do listy wszystkich posiłków:
@@ -140,6 +142,8 @@ Usuniecie posiłku:
 localhost:8000/meals/{id}
 Metoda HTTP: DELETE
 
+Zwraca null jeśli operacja się powiodła
+
 ----PLANNER-----
 
 Pobranie posiłków z danego dnia po dacie i loginie użytkownika (UWAGA ! Data jest stringiem format dd-mm-rrrr):
@@ -175,3 +179,5 @@ Ususnięcie elementu planera
 
 localhost:8000/planner/{id}
 Metoda HTTP: DELETE
+
+Zwraca null jeśli operacja się powiodła
